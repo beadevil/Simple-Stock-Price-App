@@ -5,10 +5,13 @@ st.write("""
 # Simple Stock Price App""")
 st.write("""SEARCH YOUR Ticker Symbol OF COMPANY :  https://stockanalysis.com/stocks/ """,)
 tickerSymbol = st.text_input('ENTER Ticker Symbol OF COMPANY :')
+start_d = st.date_input()
+end_d = st.date_input()
+
 
 if st.button('Search'):
     st.write("""
-    Shown are the stock **closing price** and ***volume*** of
+    Shown are the stock **closing price** and ***volume*** of Ticker Symbol
     """,tickerSymbol)
 
     # https://towardsdatascience.com/how-to-get-stock-data-using-python-c0de1df17e75
