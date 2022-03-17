@@ -3,6 +3,7 @@ import streamlit as st
 
 st.write("""
 # Simple Stock Price App""")
+st.write("""SEARCH YOUR Ticker Symbol OF COMPANY :  https://stockanalysis.com/stocks/ """,)
 tickerSymbol = st.text_input('ENTER Ticker Symbol OF COMPANY :')
 
 if st.button('Search'):
