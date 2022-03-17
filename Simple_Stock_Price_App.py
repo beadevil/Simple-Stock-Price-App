@@ -5,8 +5,11 @@ st.write("""
 # Simple Stock Price App""")
 st.write("""SEARCH YOUR Ticker Symbol OF COMPANY :  https://stockanalysis.com/stocks/ """,)
 tickerSymbol = st.text_input('ENTER Ticker Symbol OF COMPANY :')
-start_d = st.date_input()
-end_d = st.date_input()
+import datetime
+
+start_date = st.date_input('Select start date :', datetime.date(2000,1,1))
+end_date = st.date_input('Select end date :')
+
 
 
 if st.button('Search'):
@@ -20,7 +23,7 @@ if st.button('Search'):
     #get data on this ticker
     tickerData = yf.Ticker(tickerSymbol)
     #get the historical prices for this ticker
-    tickerDf = tickerData.history(period='1d', start='2010-5-31', end='2020-5-31')
+    tickerDf = tickerData.history(period='1d', start=start_date, end=end_date)
     # Open	High	Low	Close	Volume	Dividends	Stock Splits
 
     st.write("""
